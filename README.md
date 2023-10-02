@@ -38,6 +38,8 @@ cd two-tier-flask-app
 ```
 # 3. Create Docker File :-
 ```bash
+vi Dockerfile
+
 # Use an official Python runtime as the base image
 FROM python:3.9-slim
 
@@ -112,7 +114,8 @@ docker push <github_username>/flaskapp:latest
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/cc96151a-601f-4a99-b448-9c295c1d6fdb)
 
 
-# 5. Use docker-compose for creatin docker images instead of creating seperate docker containers :-
+# 5. Use docker-compose
+- Run App using one single command instead of running both the containers  :-
 ```bash
 apt install docker-compose -y
 vi docker-compose.yml
@@ -152,7 +155,7 @@ volumes:
 docker ps
 docker kill (paste here container-id)
 docker rm (paste here container-id)
-docker compose up -d
+docker-compose up -d
 # Now your docker-compose app is running
 ```
 
