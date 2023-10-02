@@ -11,5 +11,9 @@ https://medium.com/@rutikdevops/devops-project-4-31891d829c00
 
 # Project Steps :-
 - Create 1 ec2 instance :
-1. 2-Tier-App-Docker    : AWS Linux-2, t2 micro
+2-Tier-App-Docker    : AWS Linux-2, t2 micro
+<br></br>
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/a2e3083b-e690-4709-9904-7c5549d78295)
+
+
+
