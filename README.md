@@ -1,5 +1,4 @@
 # DevOps-Project-5
-
 ![2 Tier App Deployment (1)](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/5fc26e1e-e8f7-48f5-a71f-342dff3ef608)
 
 
@@ -14,6 +13,11 @@
 2-Tier-App-Docker    : AWS Linux-2, t2 micro
 <br></br>
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/a2e3083b-e690-4709-9904-7c5549d78295)
+<br></br>
+- Goto Security-> security group-> Edit inbound rules-> Add rule-> choose All Traffic
+![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c33dcb98-c446-4d35-b9e0-b24cfedbb1b7)
+
+
 
 # 1. Install and Configure the Docker :-
 ```bash
@@ -91,8 +95,21 @@ CREATE TABLE messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     message TEXT
 );
+
+# Now run the app in browser
+![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c2a5d9bf-a7bb-4eb3-840c-eb776be6c824)
+select * from messages;      # To show the data entered in App
 ```
 
+# 4. Push Docker Image in DockerHub :-
+```bash
+docker login
+# Enter username & password
+docker tag flaskapp:latest <github_username>/flaskapp:latest
+docker images
+docker push <github_username>/flaskapp:latest
+```
+![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/cc96151a-601f-4a99-b448-9c295c1d6fdb)
 
 
 
