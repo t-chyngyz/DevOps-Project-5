@@ -112,7 +112,49 @@ docker push <github_username>/flaskapp:latest
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/cc96151a-601f-4a99-b448-9c295c1d6fdb)
 
 
+# 5. Use docker-compose for creatin docker images instead of creating seperate docker containers :-
+```bash
+apt install docker-compose -y
+vi docker-compose.yml
 
+///
+version: '3'
+services:
+  
+  backend:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DB: myDb
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: myDb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    volumes:
+      - ./message.sql:/docker-entrypoint-initdb.d/message.sql   # Mount sql script into container's /docker-entrypoint-initdb.d directory to get table automatically created
+      - mysql-data:/var/lib/mysql  # Mount the volume for MySQL data storage
+
+volumes:
+  mysql-data:
+///
+
+docker ps
+docker kill (paste here container-id)
+docker rm (paste here container-id)
+docker compose up -d
+# Now your docker-compose app is running
+```
 
 
 
