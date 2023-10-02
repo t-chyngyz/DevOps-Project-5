@@ -103,11 +103,11 @@ CREATE TABLE messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
     message TEXT
 );
-
-# Now run the app in browser
-![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c2a5d9bf-a7bb-4eb3-840c-eb776be6c824)
 select * from messages;      # To show the data entered in App
 ```
+<br></br>
+# Now run the app in browser
+![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c2a5d9bf-a7bb-4eb3-840c-eb776be6c824)
 <br></br>
 
 # 4. Push Docker Image in DockerHub :-
