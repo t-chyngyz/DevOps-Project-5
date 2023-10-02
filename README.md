@@ -4,7 +4,7 @@
 
 
 # Project Blog link :-
-https://medium.com/@rutikdevops/devops-project-4-31891d829c00
+
 <br></br>
 
 # Project Overview :-
@@ -59,9 +59,39 @@ COPY . .
 # Specify the command to run your application
 CMD ["python", "app.py"]
 ```
+```bash
+docker build . -t flaskapp          #  Create a docker image from Dockerfile
+docker images
+```
+```bash
+docker network create twotier       #  Now, make sure that you have created a network using following command
+```
 
+- Attach both the containers in the same network, so that they can communicate with each other
+```bash
+docker run -d -p 3306:3306 --network=twotier -e MYSQL_DATABASE=myDb -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_ROOT_PASSWORD=admin --name=mysql mysql:5.7
 
+docker run -d -p 5000:5000 --network=twotier -e MYSQL_HOST=mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DB=myDb --name=flaskapp flaskapp:latest
 
+docker ps
+docker network ls
+docker network inspect twotier
+```
+
+# 3. Create the messages table in your MySQL database:
+```bash
+docker ps
+docker exec -it <paste here mysql container-id> bash
+mysql -u root -p
+admin                       # enter password = admin
+show databases;
+use myDb;
+# Paste this code in myDb
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    message TEXT
+);
+```
 
 
 
