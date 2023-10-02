@@ -1,12 +1,12 @@
 # DevOps-Project-5
 ![2 Tier App Deployment (1)](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/5fc26e1e-e8f7-48f5-a71f-342dff3ef608)
-
+<br></br>
 
 # Project Blog link :-
-
 <br></br>
 
 # Project Overview :-
+<br></br>
 
 # Project Steps :-
 - Create 1 ec2 instance :
@@ -16,7 +16,7 @@
 <br></br>
 - Goto Security-> security group-> Edit inbound rules-> Add rule-> choose All Traffic
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c33dcb98-c446-4d35-b9e0-b24cfedbb1b7)
-
+<br></br>
 
 
 # 1. Install and Configure the Docker :-
@@ -31,11 +31,15 @@ docker ps
 whoami
 chown $USER /var/run/docker.sock
 ```
+<br></br>
+
+
 # 2. Clone the Github code :-
 ```bash
 git clone https://github.com/LondheShubham153/two-tier-flask-app.git
 cd two-tier-flask-app
 ```
+<br></br>
 # 3. Create Docker File :-
 ```bash
 vi Dockerfile
@@ -83,6 +87,7 @@ docker ps
 docker network ls
 docker network inspect twotier
 ```
+<br></br>
 
 # 3. Create the messages table in your MySQL database:
 ```bash
@@ -102,6 +107,7 @@ CREATE TABLE messages (
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c2a5d9bf-a7bb-4eb3-840c-eb776be6c824)
 select * from messages;      # To show the data entered in App
 ```
+<br></br>
 
 # 4. Push Docker Image in DockerHub :-
 ```bash
@@ -112,10 +118,10 @@ docker images
 docker push <github_username>/flaskapp:latest
 ```
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/cc96151a-601f-4a99-b448-9c295c1d6fdb)
-
+<br></br>
 
 # 5. Use docker-compose
-- Run App using one single command instead of running both the containers  :-
+- Run App using one single command instead of running both the containers one by one  :-
 ```bash
 apt install docker-compose -y
 vi docker-compose.yml
@@ -158,6 +164,7 @@ docker rm (paste here container-id)
 docker-compose up -d
 # Now your docker-compose app is running
 ```
+<br></br>
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/3a3ca0c9-9cda-42b7-9c43-27e32df53533)
 
 
