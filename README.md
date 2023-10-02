@@ -104,12 +104,12 @@ CREATE TABLE messages (
     message TEXT
 );
 ```
-- Now run the app in browser
+- Now run the app in browser :-
+<br></br>
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c2a5d9bf-a7bb-4eb3-840c-eb776be6c824)
 <br></br>
 
 - To show the data entered in App :-
-<br></br>
 ```bash
 docker exec -it <paste here mysql container-id> bash
 mysql -u root -p
