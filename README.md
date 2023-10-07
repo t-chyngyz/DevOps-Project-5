@@ -36,8 +36,8 @@ chown $USER /var/run/docker.sock
 
 # 2. Clone the Github code :-
 ```bash
-git clone https://github.com/LondheShubham153/two-tier-flask-app.git
-cd two-tier-flask-app
+git clone https://github.com/rutikdevops/DevOps-Project-5.git
+cd DevOps-Project-5
 ```
 <br></br>
 # 3. Create Docker File :-
