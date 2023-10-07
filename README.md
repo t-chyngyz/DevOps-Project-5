@@ -7,10 +7,10 @@
 <br></br>
 
 # Project Overview :-
-- 🚀 Building a Resilient Flask App with MySQL, Docker, and Kubernetes🌐
-🌐 Application Overview
+- 🚀 Building a Resilient Flask App with MySQL, Docker, and Docker-Compose🌐
+- 🌐 Application Overview :
 I’ve developed a Flask-based web application that seamlessly interacts with a MySQL database. Users can submit messages through the user-friendly interface, and these messages are securely stored in the MySQL database, then promptly displayed on the frontend.
-🐳 Docker Containerization
+- 🐳 Docker Containerization :
 For streamlined packaging and deployment, I’ve containerized this application with Docker. This ensures consistent behavior across different environments and simplifies the deployment process.
 <br></br>
 
