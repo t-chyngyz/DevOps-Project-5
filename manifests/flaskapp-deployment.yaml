@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskapp
+  name: flaskapp
+  namespace: devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+      - image: chyngyz89kg/myregistry:flaskapp02
+        name: myregistry
+        ports:
+        - containerPort: 5000
+        # env:
+        # - name: MYSQL_HOST
+        #   value: mariadb
+        envFrom:
+        - secretRef:
+            name: flaskapp-creds
+        resources: {}
+status: {}

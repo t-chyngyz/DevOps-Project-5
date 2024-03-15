@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mariadb-set
+  namespace: devops
+spec:
+  selector:
+    matchLabels:
+      app: mariadb
+  serviceName: "mariadb"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: mariadb
+        image: mariadb:11.2.3
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: mariadb-store
+          mountPath: /var/lib/mysql
+        envFrom:
+        - secretRef:
+            name: mariadb-creds
+        resources:
+          limits:
+            memory: "1024Mi"
+            cpu:  400m
+  volumeClaimTemplates:
+  - metadata:
+      name: mariadb-store
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: "standard"
+      resources:
+        requests:
+          storage: 2Gi
