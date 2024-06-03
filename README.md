@@ -25,13 +25,16 @@ For streamlined packaging and deployment, I’ve containerized this application 
 ![image](https://github.com/rutikdevops/DevOps-Project-5/assets/109506158/c33dcb98-c446-4d35-b9e0-b24cfedbb1b7)
 <br></br>
 
-# 1.1 Install and Configura on venv on VM :-
+# 1.1 Install and Configura on venv on Ubuntu 22.04 :-
 ```sudo  apt install python3.10-venv
 python3 -m venv venv ## Creaing venv
 source venv/bin/activate ## Activeting venv
 sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
 pip install mysqlclient==2.1.1
 pip install -r requirements.txt
+export MYSQL_USER=db-user-name
+export MYSQL_PASSWORD=db-user-password
+export MYSQL_DB=db-name
 python3.10 app.py ## running App
 ```
 
