@@ -26,14 +26,14 @@ For streamlined packaging and deployment, I’ve containerized this application 
 <br></br>
 
 # 1.1 Install and Configura on venv on VM :-
-'''sudo  apt install python3.10-venv
+```sudo  apt install python3.10-venv
 python3 -m venv venv ## Creaing venv
 source venv/bin/activate ## Activeting venv
 sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
 pip install mysqlclient==2.1.1
 pip install -r requirements.txt
 python3.10 app.py ## running App
-'''
+```
 
 # 1.2 Install and Configure the Docker :-
 ```bash
